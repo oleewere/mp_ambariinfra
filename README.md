@@ -1,4 +1,4 @@
-# Ambari Infra Service MPack for Ambarpi
+# Ambari Infra Service MPack for Ambari
 
 ## Generate Ambari Infra Service mpack tarball
 Download mp_ambariinfra repository from git then run:
