@@ -1,0 +1,49 @@
+{
+  "type": "full-release",
+  "name": "{mpackName}",
+  "version": "{mpackVersion}",
+  "description": "Ambari Infra Management Pack",
+  "prerequisites": {
+    "min_ambari_version": "{minAmbariVersion}",
+    "max-ambari-version": "{maxAmbariVersion}",
+    "min_stack_versions": [
+      {
+        "stack_name": "HDP",
+        "stack_version": "3.0"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "name": "infra-solr-service-definitions ",
+      "type": "service-definitions",
+      "source_dir": "common-services"
+    },
+    {
+      "name": "solr-addon-service-definitions",
+      "type": "stack-addon-service-definitions",
+      "source_dir": "addon-services",
+      "service_versions_map": [
+        {
+          "service_name" : "AMBARI_INFRA_SOLR",
+          "service_version" : "6.6.2",
+          "applicable_stacks" : [
+            {
+              "stack_name" : "HDP",
+              "stack_version" : "3.0"
+            }
+          ]
+        },
+        {
+          "service_name": "LOGSEARCH",
+          "service_version": "1.0.0",
+          "applicable_stacks": [
+            {
+              "stack_name": "HDP",
+              "stack_version": "3.0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
