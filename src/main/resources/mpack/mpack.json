@@ -25,12 +25,12 @@
       "source_dir": "addon-services",
       "service_versions_map": [
         {
-          "service_name" : "AMBARI_INFRA_SOLR",
-          "service_version" : "6.6.2",
-          "applicable_stacks" : [
+          "service_name": "AMBARI_INFRA_SOLR",
+          "service_version": "6.6.2",
+          "applicable_stacks": [
             {
-              "stack_name" : "HDP",
-              "stack_version" : "3.0"
+              "stack_name": "HDP",
+              "stack_version": "3.0"
             }
           ]
         },
@@ -47,3 +47,4 @@
       ]
     }
   ]
+}
