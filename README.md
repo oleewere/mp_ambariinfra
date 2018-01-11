@@ -3,7 +3,7 @@
 ## Generate Ambari Infra Service mpack tarball
 Download mp_ambariinfra repository from git then run:
 ```bash
-cd iop-solr-stack
+cd mp_ambariinfra
 ./gradlew clean buildTar -Pversion=1.0.0 # additional options: -PmpackName=...
 ```
 
