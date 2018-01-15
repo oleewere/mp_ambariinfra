@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<configuration>
+  <property>
+    <name>infra-manager.batch.db.username</name>
+    <value>admin</value>
+    <description>User name for authenticating to database where infra manager stores batch data</description>
+    <display-name>Infra Manager Batch Database User</display-name>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra-manager.batch.db.password</name>
+    <value>admin</value>
+    <description>Password for authenticating to database where infra manager stores batch data</description>
+    <display-name>Infra Manager Batch Database Password</display-name>
+    <value-attributes>
+      <type>password</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <!--<property>-->
+    <!--<name>infra-manager.jobs.solr_data_export.archive_service_logs.solr.use_external</name>-->
+    <!--<value>false</value>-->
+    <!--<display-name>Use External Solr</display-name>-->
+    <!--<description>Use External Solr to store logs</description>-->
+    <!--<value-attributes>-->
+      <!--<type>value-list</type>-->
+      <!--<overridable>false</overridable>-->
+      <!--<entries>-->
+        <!--<entry>-->
+          <!--<value>true</value>-->
+          <!--<label>ON</label>-->
+        <!--</entry>-->
+        <!--<entry>-->
+          <!--<value>false</value>-->
+          <!--<label>OFF</label>-->
+        <!--</entry>-->
+      <!--</entries>-->
+      <!--<selection-cardinality>1</selection-cardinality>-->
+    <!--</value-attributes>-->
+    <!--<on-ambari-upgrade add="true"/>-->
+  <!--</property>-->
+  <!--<property>-->
+    <!--<name>infra-manager.jobs.solr_data_export.archive_service_logs.solr.external_solr_zk_znode</name>-->
+    <!--<value></value>-->
+    <!--<display-name>External Solr Logs Znode</display-name>-->
+    <!--<description>Only needed if using custom solr cloud. E.g. /logsearch_solr</description>-->
+    <!--<on-ambari-upgrade add="true"/>-->
+  <!--</property>-->
+  <!--<property>-->
+    <!--<name>infra-manager.jobs.solr_data_export.archive_service_logs.solr.external_solr_zk_quorum</name>-->
+    <!--<value></value>-->
+    <!--<display-name>External Solr Logs ZK Quorum</display-name>-->
+    <!--<description>Only needed if using custom solr cloud. E.g. zk1:2181,zk2:2182</description>-->
+    <!--<on-ambari-upgrade add="true"/>-->
+  <!--</property>-->
+  <property>
+    <name>infra-manager.jobs.solr_data_export.archive_service_logs.read_block_size</name>
+    <value>1000</value>
+    <description>Number of rows read from solr per query</description>
+    <display-name>Read block size</display-name>
+    <value-attributes>
+      <type>int</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra-manager.jobs.solr_data_export.archive_service_logs.write_block_size</name>
+    <value>1000</value>
+    <description>Number of rows written to output per file</description>
+    <display-name>Write block size</display-name>
+    <value-attributes>
+      <type>int</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra-manager.jobs.solr_data_export.archive_service_logs.destination</name>
+    <value>LOCAL</value>
+    <description>Storage of the archived files: LOCAL, HDFS, S3</description>
+    <display-name>Destination</display-name>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra-manager.jobs.solr_data_export.archive_service_logs.local_destination_directory</name>
+    <value>/tmp/ambariInfraManager</value>
+    <description>If destination id set to LOCAL the path in the local file system where archived files are stored.</description>
+    <display-name>Destination</display-name>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra-manager.jobs.solr_data_export.archive_service_logs.file_name_suffix_column</name>
+    <value>logtime</value>
+    <description>Value of the column in the first record written to the file is going to be the suffix of the file</description>
+    <display-name>Filename suffix column</display-name>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra-manager.jobs.solr_data_export.archive_service_logs.file_name_suffix_date_format</name>
+    <value>yyyy-MM-dd'T'HH-mm-ss.SSSX</value>
+    <description>Format string of the filename suffix value if the filename suffix column is a datetime</description>
+    <display-name>Filename suffix date format</display-name>
+    <on-ambari-upgrade add="true"/>
+  </property>
+</configuration>

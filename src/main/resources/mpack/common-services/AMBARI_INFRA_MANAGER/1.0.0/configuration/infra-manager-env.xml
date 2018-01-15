@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<configuration supports_adding_forbidden="true">
+  <property>
+    <name>infra_manager_pid_dir</name>
+    <value>/var/run/ambari-infra-manager</value>
+    <description>Infra Manager Process ID Directory</description>
+    <display-name>Infra Manager pid dir</display-name>
+    <value-attributes>
+      <type>directory</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra_manager_log_dir</name>
+    <value>/var/log/ambari-infra-manager</value>
+    <description>Log directory for Infra Manager</description>
+    <display-name>Infra Manager log dir</display-name>
+    <value-attributes>
+      <type>directory</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra_manager_user</name>
+    <value>inframanager</value>
+    <property-type>USER</property-type>
+    <description>Infra Manager user</description>
+    <display-name>Infra Manager User</display-name>
+    <value-attributes>
+      <type>user</type>
+      <overridable>false</overridable>
+      <user-groups>
+        <property>
+          <type>cluster-env</type>
+          <name>user_group</name>
+        </property>
+      </user-groups>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra_manager_debug_enabled</name>
+    <value>false</value>
+    <display-name>Infra Manager Debug Enabled</display-name>
+    <description>Enable debug mode for Ambari Infra Manager</description>
+    <value-attributes>
+      <type>boolean</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra_manager_debug_suspend_enabled</name>
+    <value>false</value>
+    <display-name>Infra Manager Debug Suspend Enabled</display-name>
+    <description>Infra manager waits until debugger attached when starting</description>
+    <value-attributes>
+      <type>boolean</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra_manager_debug_port</name>
+    <value>5005</value>
+    <display-name>Infra Manager Debug Port</display-name>
+    <description>Debug port for Ambari Infra Manager</description>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra_manager_app_max_memory</name>
+    <value>1024</value>
+    <display-name>Infra Manager maximum memory</display-name>
+    <description>Setting Java heap for Ambari Infra Manager application</description>
+    <value-attributes>
+      <type>int</type>
+      <minimum>512</minimum>
+      <maximum>4096</maximum>
+      <unit>MB</unit>
+      <increment-step>256</increment-step>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra_manager_batch_db_dir</name>
+    <value>/usr/lib/ambari-infra-manager</value>
+    <description>Direcotry of database file where Infra Manager stores batch data</description>
+    <display-name>Infra Manager database dir</display-name>
+    <value-attributes>
+      <type>directory</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+  <property>
+    <name>infra_manager_server_data_folder</name>
+    <value>/tmp/ambariInfraManager</value>
+    <description>Directory path where infra manager stores temporary data</description>
+    <display-name>Server data dir</display-name>
+    <value-attributes>
+      <type>directory</type>
+    </value-attributes>
+    <on-ambari-upgrade add="true"/>
+  </property>
+
+  <property>
+    <name>content</name>
+    <display-name>infra-manager-env template</display-name>
+    <description>This is the jinja template for infra-manager-env.sh file</description>
+    <value/>
+    <property-type>VALUE_FROM_PROPERTY_FILE</property-type>
+    <value-attributes>
+      <property-file-name>infra-manager-env.sh.j2</property-file-name>
+      <property-file-type>text</property-file-type>
+    </value-attributes>
+    <on-ambari-upgrade add="false"/>
+  </property>
+</configuration>
